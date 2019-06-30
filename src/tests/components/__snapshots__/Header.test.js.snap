@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should correctly render Header. 1`] = `
+<PageHeader
+  backIcon={
+    <Icon
+      type="arrow-left"
+    />
+  }
+  style={
+    Object {
+      "border": "1px solid #D9D9D9",
+      "marginBottom": 10,
+    }
+  }
+  subTitle="Find restaurants near you"
+  title="OpenTable"
+/>
+`;
