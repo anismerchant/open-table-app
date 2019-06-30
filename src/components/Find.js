@@ -56,11 +56,11 @@ const styles = {
       paddingLeft: 10,
       fontWeight: 'bold',
       fontSize: '3vh',
-    }
+    },
   }
-}
+};
 
-class Find extends Component {
+export class Find extends Component {
     state = {
       city: ''
     }
@@ -83,12 +83,12 @@ class Find extends Component {
         if (this.state.city) {
           axios.get(`${apiEndpoint}${queryString}${this.state.city}`)
           .then(response => 
-            this.props.dispatch(getResult({data: response.data})
-          ));
+            this.props.onKeyUp({data: response.data})
+          );
         }
       }
       catch (error) {
-        console.log(error.status())
+        console.log(error)
       }
     }
 
@@ -147,4 +147,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Find);
+const mapDispatchToProps = (dispatch) => ({
+  onKeyUp: (payload) => dispatch(getResult(payload)) 
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Find);
