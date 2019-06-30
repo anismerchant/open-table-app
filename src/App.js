@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Header from '../src/components/Header';
+import Find from '../src/components/Find';
+import './App.css';
 
-function App() {
-  return (
+const App = () => (
     <div className="App">
-      <div>Hello</div>
+      <Header />
+      <Find />
     </div>
   );
-}
 
-export default App;
+export default connect()(App);
