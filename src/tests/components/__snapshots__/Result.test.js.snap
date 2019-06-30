@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should correctly render Result. 1`] = `
+<Card
+  cover={
+    <img
+      alt="restaurant"
+    />
+  }
+  hoverable={true}
+  style={
+    Object {
+      "margin": 15,
+      "width": 240,
+    }
+  }
+>
+  <Meta />
+  <p>
+    , 
+     
+  </p>
+  <p>
+    $
+  </p>
+</Card>
+`;
