@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`It should correctly render Find. 1`] = `
+<div>
+  <form
+    onKeyUp={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "height": "auto",
+          "position": "relative",
+        }
+      }
+    >
+      <img
+        alt="restaurant"
+        src="./assets/images/restaurant-large.jpg"
+        style={
+          Object {
+            "filter": "brightness(60%) contrast(90%)",
+            "margin": "auto",
+            "maxHeight": "35rem",
+            "opacity": "0.7",
+            "width": "95%",
+          }
+        }
+      />
+      <p
+        style={
+          Object {
+            "color": "white",
+            "fontSize": "4vh",
+            "fontWeight": "bold",
+            "left": "8%",
+            "lineHeight": 1,
+            "position": "absolute",
+            "top": "25%",
+            "width": "80%",
+          }
+        }
+      >
+        Find your table for any occasion
+      </p>
+      <Search
+        autoFocus={true}
+        enterButton={false}
+        onChange={[Function]}
+        placeholder="City"
+        style={
+          Object {
+            "height": 40,
+            "left": "16%",
+            "position": "absolute",
+            "top": "60%",
+            "width": "70%",
+          }
+        }
+        type="text"
+      />
+    </div>
+  </form>
+  <p
+    style={
+      Object {
+        "city": Object {
+          "display": "inline-block",
+          "fontSize": "3vh",
+          "fontWeight": "bold",
+          "paddingLeft": 10,
+        },
+        "display": "inline-block",
+        "fontSize": "3vh",
+      }
+    }
+  >
+    Popular restaurants in
+  </p>
+  <div
+    style={
+      Object {
+        "display": "inline-block",
+        "fontSize": "3vh",
+        "fontWeight": "bold",
+        "paddingLeft": 10,
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "alignItem": "center",
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <div />
+  </div>
+</div>
+`;
