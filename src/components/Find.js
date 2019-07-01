@@ -95,17 +95,14 @@ export class Find extends Component {
     // Display results
     showResult = () => {
       const {restaurants} = this.props.result
-      if (restaurants) {
+        if(!restaurants || !this.state.city) return;
         if(!restaurants.length) {
           return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description='No Restaurants Found.'/>
-        }
-        if(!this.state.city) {
-          return <div></div>
         }
         return restaurants.map(restaurant => {
           return <Result style={styles.resultContainer} key={restaurant.id} {...restaurant} />
         })
-      }  
+        
     }
 
     // Clear results
