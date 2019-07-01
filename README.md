@@ -1,3 +1,25 @@
+## Overview: OpenTable App
+An OpenTable application for finding restaurants in your area.
+
+Try it out: https://bit.ly/2Jg3Dyy
+**please wait about 15 seconds for the servers to spin up.
+
+## Technology Stack
+
+* React/Redux
+* Node/Express
+* Jest/Enzyme (for testing)
+* OpenTable API
+* Ant Design
+
+## Screenshots
+
+![open-table-app-mobile](https://user-images.githubusercontent.com/5770541/60465389-f717e100-9c1e-11e9-88e2-28029da29673.png)
+
+![open-table-app-desktop](https://user-images.githubusercontent.com/5770541/60462704-09425100-9c18-11e9-82c4-2bf3c3636b17.png)
+
+## Other Details
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
