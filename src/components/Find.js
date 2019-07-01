@@ -70,13 +70,11 @@ export class Find extends Component {
   // Capture city input
   onChange = (e) => {
     const city = e.target.value;
-    if (city) {
-      this.setState(() => ({ city }))
-    }
     if(!city) {
       this.setState(() => ({ city: '' }))
       return this.clearResult();
     }
+    this.setState(() => ({ city }))
   }
 
   // Api call
