@@ -49,8 +49,10 @@ const styles = {
     left: '16%',
   },
   resultHeading: {
-    display: 'inline-block',
-    fontSize: '3vh',
+    title: {
+      display: 'inline-block',
+      fontSize: '3vh',
+    },
     city: {
       display: 'inline-block',
       paddingLeft: 10,
@@ -66,7 +68,7 @@ export class Find extends Component {
     }
 
     // Capture city input
-    onSearchResults = (e) => {
+    onChange = (e) => {
       const city = e.target.value;
       if (city) {
         this.setState(() => ({ city }))
@@ -123,12 +125,12 @@ export class Find extends Component {
                         type="text"
                         placeholder="City"
                         autoFocus
-                        onChange={this.onSearchResults}
+                        onChange={this.onChange}
                         style={styles.searchContainer}
                       />
                     </div>
                 </form>
-                <p style={styles.resultHeading}>Popular restaurants in</p>
+                <p style={styles.resultHeading.title}>Popular restaurants in</p>
                 <div style={styles.resultHeading.city}>{this.state.city}</div>
                 <div style={styles.cardContaier}>
                   {this.showResult()}
