@@ -1,7 +1,7 @@
-import React from 'react';
-import { Card } from 'antd';
+import React from 'react'
+import { Card } from 'antd'
 
-const { Meta } = Card;
+const { Meta } = Card
 
 export default (props) => (     
   <Card 
@@ -13,5 +13,4 @@ export default (props) => (
     <p>{props.city}, {props.state} {props.postal_code}</p>
     <p>${props.price}</p>
   </Card>
-);
-
+)

@@ -1,4 +1,4 @@
-const resultDefaultState = {};
+const resultDefaultState = {}
 
 const resultReducer = (state=resultDefaultState, action) => {
   switch(action.type) {
@@ -9,4 +9,4 @@ const resultReducer = (state=resultDefaultState, action) => {
   }
 }
 
-export default resultReducer;
+export default resultReducer

@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios';
-import { Empty, Input } from 'antd';
-import getResult from '../actions/result';
-import Result from './Result';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import axios from 'axios'
+import { Empty, Input } from 'antd'
+import getResult from '../actions/result'
+import Result from './Result'
 
-const { Search } = Input;
+const { Search } = Input
 
-const apiEndpoint = 'https://opentable.herokuapp.com/api/restaurants';
-const queryString = '?city=';
+const apiEndpoint = 'https://opentable.herokuapp.com/api/restaurants'
+const queryString = '?city='
 
 const styles = {
   cardContaier: {
@@ -60,7 +60,7 @@ const styles = {
       fontSize: '3vh',
     },
   }
-};
+}
 
 export class Find extends Component {
   state = {
@@ -69,10 +69,10 @@ export class Find extends Component {
 
   // Capture city input
   onChange = (e) => {
-    const city = e.target.value;
+    const city = e.target.value
     if(!city) {
       this.setState(() => ({ city: '' }))
-      return this.clearResult();
+      return this.clearResult()
     }
     this.setState(() => ({ city }))
   }
@@ -84,14 +84,14 @@ export class Find extends Component {
       .then(response => 
         this.props.onKeyUp({data: response.data})
       )
-      .catch(console.log);
+      .catch(console.log)
     }
   }
 
   // Display results
   showResult = () => {
     const  {restaurants } = this.props.result
-    if(!restaurants || !this.state.city) return;
+    if(!restaurants || !this.state.city) return
     if(!restaurants.length) {
       return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description='No Restaurants Found.'/>
     }
@@ -103,7 +103,7 @@ export class Find extends Component {
   // Clear results
   clearResult = () => {
     if(!this.state.city) {
-      return this.showResult();
+      return this.showResult()
     }
   }
 
@@ -129,7 +129,7 @@ export class Find extends Component {
           {this.showResult()}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -141,6 +141,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   onKeyUp: (payload) => dispatch(getResult(payload)) 
-});
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Find);
+export default connect(mapStateToProps, mapDispatchToProps)(Find)

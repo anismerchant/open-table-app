@@ -1,5 +1,5 @@
-import React from 'react';
-import { PageHeader } from 'antd';
+import React from 'react'
+import { PageHeader } from 'antd'
 
 const styles = {
   pageHeaderContainer: {
@@ -14,4 +14,4 @@ export default () => (
     title="OpenTable" 
     subTitle="Find restaurants near you" 
   />
-);
+)
