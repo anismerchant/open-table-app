@@ -81,16 +81,12 @@ export class Find extends Component {
 
     // Api call
     onKeyUp = () => {
-      try {
-        if (this.state.city) {
-          axios.get(`${apiEndpoint}${queryString}${this.state.city}`)
-          .then(response => 
-            this.props.onKeyUp({data: response.data})
-          );
-        }
-      }
-      catch (error) {
-        console.log(error)
+      if (this.state.city) {
+        axios.get(`${apiEndpoint}${queryString}${this.state.city}`)
+        .then(response => 
+          this.props.onKeyUp({data: response.data})
+        )
+        .catch(console.log);
       }
     }
 
