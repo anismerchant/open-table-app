@@ -63,83 +63,82 @@ const styles = {
 };
 
 export class Find extends Component {
-    state = {
-      city: ''
-    }
+  state = {
+    city: ''
+  }
 
-    // Capture city input
-    onChange = (e) => {
-      const city = e.target.value;
-      if (city) {
-        this.setState(() => ({ city }))
-      }
-      if(!city) {
-        this.setState(() => ({ city: '' }))
-        return this.clearResult();
-      }
+  // Capture city input
+  onChange = (e) => {
+    const city = e.target.value;
+    if (city) {
+      this.setState(() => ({ city }))
     }
+    if(!city) {
+      this.setState(() => ({ city: '' }))
+      return this.clearResult();
+    }
+  }
 
-    // Api call
-    onKeyUp = () => {
-      if (this.state.city) {
-        axios.get(`${apiEndpoint}${queryString}${this.state.city}`)
-        .then(response => 
-          this.props.onKeyUp({data: response.data})
-        )
-        .catch(console.log);
-      }
+  // Api call
+  onKeyUp = () => {
+    if (this.state.city) {
+      axios.get(`${apiEndpoint}${queryString}${this.state.city}`)
+      .then(response => 
+        this.props.onKeyUp({data: response.data})
+      )
+      .catch(console.log);
     }
+  }
 
-    // Display results
-    showResult = () => {
-      const {restaurants} = this.props.result
-        if(!restaurants || !this.state.city) return;
-        if(!restaurants.length) {
-          return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description='No Restaurants Found.'/>
-        }
-        return restaurants.map(restaurant => {
-          return <Result style={styles.resultContainer} key={restaurant.id} {...restaurant} />
-        })
-        
+  // Display results
+  showResult = () => {
+    const  {restaurants } = this.props.result
+    if(!restaurants || !this.state.city) return;
+    if(!restaurants.length) {
+      return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description='No Restaurants Found.'/>
     }
+    return restaurants.map(restaurant => {
+      return <Result style={styles.resultContainer} key={restaurant.id} {...restaurant} />
+    }) 
+  }
 
-    // Clear results
-    clearResult = () => {
-      if(!this.state.city) {
-        return this.showResult();
-      }
+  // Clear results
+  clearResult = () => {
+    if(!this.state.city) {
+      return this.showResult();
     }
+  }
 
-    render() {
-        return (
-            <div>   
-                <form onKeyUp={this.onKeyUp} onSubmit={(e) => e.preventDefault()}>
-                    <div style={styles.bodyContainer}>
-                      <img style={styles.imgContainer} src='./assets/images/restaurant-large.jpg' alt="restaurant" />
-                      <p style={styles.text}>Find your table for any occasion</p>
-                      <Search
-                        type="text"
-                        placeholder="City"
-                        autoFocus
-                        onChange={this.onChange}
-                        style={styles.searchContainer}
-                      />
-                    </div>
-                </form>
-                <p style={styles.resultHeading.title}>Popular restaurants in</p>
-                <div style={styles.resultHeading.city}>{this.state.city}</div>
-                <div style={styles.cardContaier}>
-                  {this.showResult()}
-                </div>
-            </div>
-        );
-    }
+  render()  {
+    return (
+      <div>   
+        <form onKeyUp={this.onKeyUp} onSubmit={(e) => e.preventDefault()}>
+          <div style={styles.bodyContainer}>
+            <img style={styles.imgContainer} src='./assets/images/restaurant-large.jpg' alt="restaurant" />
+            <p style={styles.text}>Find your table for any occasion</p>
+            <Search
+              type="text"
+              placeholder="City"
+              autoFocus
+              onChange={this.onChange}
+              style={styles.searchContainer}
+            />
+          </div>
+        </form>
+        <p style={styles.resultHeading.title}>Popular restaurants in</p>
+        <div style={styles.resultHeading.city}>{this.state.city}</div>
+        <div style={styles.cardContaier}>
+          {this.showResult()}
+        </div>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = (state) => {
-    return {
-      result: state.result
-    }
+  return {
+    result: state.result
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({
