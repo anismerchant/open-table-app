@@ -91,5 +91,10 @@ exports[`It should correctly render Find. 1`] = `
       }
     }
   />
+  <div>
+    <BackTop
+      visibilityHeight={400}
+    />
+  </div>
 </div>
 `;
