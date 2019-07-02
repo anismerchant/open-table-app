@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { Empty, Input } from 'antd'
+import { BackTop, Empty, Input } from 'antd'
 import getResult from '../actions/result'
 import Result from './Result'
 
@@ -127,6 +127,9 @@ export class Find extends Component {
         <div style={styles.resultHeading.city}>{this.state.city}</div>
         <div style={styles.cardContaier}>
           {this.showResult()}
+        </div>
+        <div>
+          <BackTop />
         </div>
       </div>
     )
