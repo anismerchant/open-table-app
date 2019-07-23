@@ -10,6 +10,17 @@
   margin-bottom: 0.625rem;
 }
 
+@media (min-width: 768px) { 
+  .ant-page-header-heading-title {
+    font-size: 2rem;
+  }
+
+  .ant-page-header-heading-sub-title {
+    font-size: 1.6rem;
+  }
+}
+
+
 .ant-search-container {
   height: auto;
   position: relative;
