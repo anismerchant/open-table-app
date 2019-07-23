@@ -10,58 +10,6 @@ const { Search } = Input
 const apiEndpoint = 'https://opentable.herokuapp.com/api/restaurants'
 const queryString = '?city='
 
-const styles = {
-  cardContaier: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItem: 'center',
-  },
-  resultContainer: {
-    margin: 5
-  },
-  bodyContainer: {
-    height: 'auto',
-    position: 'relative', 
-  },
-  imgContainer: {
-    margin: 'auto',
-    width: '95%',
-    maxHeight: '35rem',
-    opacity: '0.7',
-    filter: 'brightness(60%) contrast(90%)',
-  },
-  text: {
-    fontSize: '4vh',
-    color: 'white',
-    fontWeight: 'bold',
-    position: 'absolute',
-    top: '25%',
-    left: '8%',
-    width: '80%',
-    lineHeight: 1,
-  },
-  searchContainer: {
-    width: '70%',
-    height: 40,
-    position: 'absolute',
-    top: '60%',
-    left: '16%',
-  },
-  resultHeading: {
-    title: {
-      display: 'inline-block',
-      fontSize: '3vh',
-    },
-    city: {
-      display: 'inline-block',
-      paddingLeft: 10,
-      fontWeight: 'bold',
-      fontSize: '3vh',
-    },
-  }
-}
-
 export class Find extends Component {
   state = {
     city: ''
@@ -96,7 +44,7 @@ export class Find extends Component {
       return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description='No Restaurants Found.'/>
     }
     return restaurants.map(restaurant => {
-      return <Result style={styles.resultContainer} key={restaurant.id} {...restaurant} />
+      return <Result key={restaurant.id} {...restaurant} />
     }) 
   }
 
@@ -111,21 +59,20 @@ export class Find extends Component {
     return (
       <div>   
         <form onKeyUp={this.onKeyUp} onSubmit={(e) => e.preventDefault()}>
-          <div style={styles.bodyContainer}>
-            <img style={styles.imgContainer} src='./assets/images/restaurant-large.jpg' alt="restaurant" />
-            <p style={styles.text}>Find your table for any occasion</p>
+          <div className="ant-search-container">
+            <img src="./assets/images/restaurant-large.jpg" alt="restaurant" />
+            <p>Find your table for any occasion</p>
             <Search
               type="text"
               placeholder="City"
               autoFocus
               onChange={this.onChange}
-              style={styles.searchContainer}
             />
           </div>
         </form>
-        <p style={styles.resultHeading.title}>Popular restaurants in</p>
-        <div style={styles.resultHeading.city}>{this.state.city}</div>
-        <div style={styles.cardContaier}>
+        <p className="ant-input-search-heading">Popular restaurants in</p>
+        <div className="ant-input-search-city-name">{this.state.city}</div>
+        <div className="ant-card-container">
           {this.showResult()}
         </div>
         <div>

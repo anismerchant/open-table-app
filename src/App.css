@@ -3,3 +3,71 @@
 .App {
   text-align: center;
 }
+
+/* Custom CSS */
+.ant-page-header {
+  border: 1px solid #D9D9D9;
+  margin-bottom: 0.625rem;
+}
+
+.ant-search-container {
+  height: auto;
+  position: relative;
+}
+
+.ant-search-container img {
+  margin: auto;
+  width: 95%;
+  max-height: 35rem;
+  opacity: 0.7;
+  filter: brightness(60%) contrast(90%);
+}
+
+.ant-input-search-heading {
+  display: inline-block;
+  font-size: 3vh;
+}
+
+.ant-search-container p {
+    font-size: 4vh;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 45%;
+    left: 11%;
+    width: 80%;
+    line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .ant-search-container p {
+    font-size: 2.5vh;
+  }
+}
+
+.ant-input-search {
+  width: 70%;
+  height: 40;
+  position: absolute;
+  top: 60%;
+  left: 16%;
+}
+
+.ant-input-search-city-name {
+  display: inline-block;
+  padding-left: 0.625rem;
+  font-weight: bold;
+  font-size: 3vh;
+}
+
+.ant-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-card {
+  width: 15rem; 
+  margin: 1rem;
+}

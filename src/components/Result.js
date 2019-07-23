@@ -6,7 +6,6 @@ const { Meta } = Card
 export default (props) => (     
   <Card 
     hoverable
-    style={{ width: 240, margin: 15 }}
     cover={<img alt="restaurant" src={props.image_url}  />}
   >
     <Meta title={props.name} description={props.address} />
