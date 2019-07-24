@@ -11,12 +11,13 @@ Try it out: https://bit.ly/2Jg3Dyy
 * Jest/Enzyme (for testing)
 * OpenTable API
 * Ant Design
+* Heroku
 
 ## Screenshots
 
-![open-table-app-mobile](https://user-images.githubusercontent.com/5770541/60465389-f717e100-9c1e-11e9-88e2-28029da29673.png)
+![open-table-app-mobile](https://user-images.githubusercontent.com/5770541/61755432-74012b00-ad85-11e9-905c-0700c4486a7e.png)
 
-![open-table-app-desktop](https://user-images.githubusercontent.com/5770541/60462704-09425100-9c18-11e9-82c4-2bf3c3636b17.png)
+![open-table-app-desktop](https://user-images.githubusercontent.com/5770541/61755475-ac086e00-ad85-11e9-9be8-20ee5634a5ae.png)
 
 ## Other Details
 
