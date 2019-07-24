@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Header from '../src/components/Header'
 import Find from '../src/components/Find'
-import './App.css'
+import './css/App.css'
 
 const App = () => (
     <div className="App">
