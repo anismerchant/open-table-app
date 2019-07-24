@@ -4,11 +4,9 @@ import axios from 'axios'
 import { BackTop, Empty, Input } from 'antd'
 import getResult from '../actions/result'
 import Result from './Result'
+import { API_ENDPOINT, QUERY_STRING } from '../api'
 
 const { Search } = Input
-
-const apiEndpoint = 'https://opentable.herokuapp.com/api/restaurants'
-const queryString = '?city='
 
 export class Find extends Component {
   state = {
@@ -28,7 +26,7 @@ export class Find extends Component {
   // Api call
   onKeyUp = () => {
     if (this.state.city) {
-      axios.get(`${apiEndpoint}${queryString}${this.state.city}`)
+      axios.get(`${API_ENDPOINT}${QUERY_STRING}${this.state.city}`)
       .then(response => 
         this.props.onKeyUp({data: response.data})
       )
